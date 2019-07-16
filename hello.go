@@ -10,20 +10,22 @@ const enprefix = "Hello, "
 const esprefix = "Hola, "
 const frprefix = "Bonjour, "
 
-func Hello(name string, lang string) string {
-  if name == "" {
-    name = "world"
-  }
-
-  var prefix string
+func prefix(lang string) (prefix string) {
   switch lang {
   case en: prefix = enprefix
   case es: prefix = esprefix
   case fr: prefix = frprefix
   default: prefix = enprefix
   }
+  return
+}
 
-  return prefix + name
+func Hello(name string, lang string) string {
+  if name == "" {
+    name = "world"
+  }
+
+  return prefix(lang) + name
 }
 
 func main() {
