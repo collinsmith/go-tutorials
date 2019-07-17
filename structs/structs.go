@@ -1,9 +1,14 @@
 package structs
 
-func perimeter(width, height float64) float64 {
-  return width + width + height + height
+type Rect struct {
+  width float64
+  height float64
 }
 
-func area(width, height float64) float64 {
-  return width * height
+func perimeter(r Rect) float64 {
+  return r.width + r.width + r.height + r.height
+}
+
+func area(r Rect) float64 {
+  return r.width * r.height
 }
