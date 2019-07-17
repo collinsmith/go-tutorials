@@ -2,6 +2,10 @@ package structs
 
 import "math"
 
+type Shape interface {
+  area() float64
+}
+
 type Rect struct {
   width float64
   height float64
